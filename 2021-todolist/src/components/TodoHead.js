@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { useTodoState } from "./TodoContext";
 
 const year = new Date().getFullYear() + "년" + " ";
 const month = new Date().getMonth() + 1 + "월" + " ";
@@ -19,21 +20,30 @@ weekarr[6] = "토요일";
 const weekday = weekarr[week.getDay()];
 
 export default function TodoHead() {
+  const todos = useTodoState();
+  console.log(todos);
+  
   return (
     <Container>
-      <StyledToday>{today}</StyledToday>
-      <StyledToday>{weekday}</StyledToday>
-      <p>오늘의 할 일</p>
+      <StyledToday>
+        {today} {weekday}
+      </StyledToday>
+      <TodoText>할 일 n개 남음</TodoText>
     </Container>
   );
 }
 
 const Container = styled.div`
-  /* background: #55efc4; */
   padding: 30px 40px 30px 32px;
   border-bottom: 1px solid #dfe6e9;
 `;
 
 const StyledToday = styled.h1`
+  font-size: 35px;
+`;
+
+const TodoText = styled.text`
   font-size: 20px;
+  font-weight: 500;
+  color: #16a085;
 `;
