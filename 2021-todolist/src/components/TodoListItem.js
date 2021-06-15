@@ -1,18 +1,27 @@
 import React from "react";
 import styled, { css } from "styled-components";
 import { MdDone, MdDelete } from "react-icons/md";
+import {useTodoDispatch} from './TodoContext';
 
-export default function TodoListItem({ id, done, text }) {
+ function TodoListItem({ id, done, text }) {
+  const dispatch = useTodoDispatch();
+  const onToggle = () => dispatch({type: 'TOGGLE', id});
+  const onRemove = () => dispatch({type: 'REMOVE', id});
+
   return (
     <Container>
-      <CheckCircle done={done}>{done && <MdDone />}</CheckCircle>
+      <CheckCircle done={done} onClick={onToggle}>
+        {done && <MdDone />
+        }</CheckCircle>
       <Text done={done}>{text}</Text>
-      <Remove>
+      <Remove onClick={onRemove}>
         <MdDelete />
       </Remove>
     </Container>
   );
 }
+
+export default React.memo(TodoListItem);
 
 const Remove = styled.div`
   display: flex;

@@ -19,16 +19,19 @@ weekarr[6] = "토요일";
 
 const weekday = weekarr[week.getDay()];
 
+
+
+
 export default function TodoHead() {
   const todos = useTodoState();
-  console.log(todos);
-  
+  const undoneTasks = todos.filter((todo) => !todo.done);
+
   return (
     <Container>
       <StyledToday>
         {today} {weekday}
       </StyledToday>
-      <TodoText>할 일 n개 남음</TodoText>
+      <TodoText>{undoneTasks.length}개 남음</TodoText>
     </Container>
   );
 }

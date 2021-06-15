@@ -1,14 +1,21 @@
 import React from "react";
 import styled from "styled-components";
-import TodoListItem from './TodoListItem';
+import TodoListItem from "./TodoListItem";
+import { useTodoState } from "./TodoContext";
 
 export default function TodoList() {
+  const todos = useTodoState();
+
   return (
     <Container>
-      <TodoListItem text="프로젝트 생성하기" done={true} />
-      <TodoListItem text="컴포넌트 스타일링 하기" done={true} />
-      <TodoListItem text="Context 만들기" done={false} />
-      <TodoListItem text="기능 구현하기" done={false} />
+      {todos.map((todo) => (
+        <TodoListItem
+          key={todo.id}
+          id={todo.id}
+          text={todo.text}
+          done={todo.done}
+        />
+      ))}
     </Container>
   );
 }
