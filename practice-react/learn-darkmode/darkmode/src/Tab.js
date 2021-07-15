@@ -8,7 +8,7 @@ const Container = styled.div`
   align-items: center;
   height: 60px;
   width: 100%;
-  background-color: transparent;
+  background: #c70102;
 `;
 
 const LinkButton = styled(NavLink)`
@@ -26,7 +26,6 @@ const LinkButton = styled(NavLink)`
     color: #eb4559;
   }
 `;
-
 
 function Tab() {
   return (

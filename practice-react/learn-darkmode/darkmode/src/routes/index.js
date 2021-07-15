@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import { Switch, Route } from "react-router-dom";
-import Main from '../components/Main';
+import Main from "../components/Main";
 import Sub from "../components/Sub";
+import Error from "../components/Error";
 
 const Container = styled.div`
   display: flex;
@@ -18,7 +19,8 @@ const RootRouter = () => {
     <Container>
       <Switch>
         <Route exact path="/" component={Main} />
-        <Route exact path="/sub" component={Sub} />
+        <Route path="/sub" component={Sub} />
+        <Route component={Error} />
       </Switch>
     </Container>
   );

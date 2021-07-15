@@ -4,6 +4,7 @@ import RootRouter from "./routes";
 import { ThemeProvider } from "./context/themeProvider";
 import { GlobalStyle } from './theme/GlobalStyle';
 import Tab from './Tab';
+import Loading from "./components/Loading";
 
 
 function App() {
@@ -11,7 +12,7 @@ function App() {
     <BrowserRouter>
       <ThemeProvider>
         <GlobalStyle />
-        <Suspense fallback={<div>...loading</div>}>
+        <Suspense fallback={<Loading />}>
           <Tab />
           <RootRouter />
         </Suspense>

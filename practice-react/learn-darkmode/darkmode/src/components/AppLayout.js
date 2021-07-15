@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-// import { FlexContainer } from "../style/styles";
 import { useTheme } from "../context/themeProvider";
 import ThemeToggle from "../theme/themeToggle";
 
