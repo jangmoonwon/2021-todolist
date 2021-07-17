@@ -16,14 +16,14 @@ const LinkButton = styled(NavLink)`
   justify-content: center;
   margin: auto;
   text-decoration: none;
-  color: #cccccc;
+  color: #ffffff;
   font-size: 27px;
-  font-weight: 400;
+  font-weight: 600;
   &:hover {
     color: #eb4559;
   }
   &.active {
-    color: #eb4559;
+    color: #000000;
   }
 `;
 

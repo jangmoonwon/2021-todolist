@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useTheme } from "../context/themeProvider";
 import AppLayout from "./AppLayout";
+import Spinner from './Spinner';
 
 const Sub = () => {
   const ThemeMode = useTheme();
@@ -10,7 +11,7 @@ const Sub = () => {
   return (
     <AppLayout>
       <h2>
-        Sub Pages
+      <Spinner />
         <br />
         <ColoredText>{CurrentMode}</ColoredText>
       </h2>
