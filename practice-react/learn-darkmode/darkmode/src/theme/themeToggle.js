@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function ThemeToggle({ toggle, mode }) {
+function ThemeToggle({ toggle, mode, tab }) {
   return (
-    <ToggleWrapper onClick={toggle} mode={mode}>
+    <ToggleWrapper onClick={toggle} mode={mode} tab={tab}>
       {mode === 'dark' ? '🌚' : '🌝'}
     </ToggleWrapper>
   );

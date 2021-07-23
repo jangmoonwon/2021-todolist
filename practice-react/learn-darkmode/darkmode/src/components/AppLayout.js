@@ -7,12 +7,10 @@ const AppLayout = ({ children }) => {
   const [ThemeMode, toggleTheme] = useTheme();
   return (
     <Container>
-          <ThemeToggle toggle={toggleTheme} mode={ThemeMode}>
-              Dark Mode
-          </ThemeToggle>
-          <FlexContainer>
-              {children}
-          </FlexContainer>
+      <ThemeToggle toggle={toggleTheme} mode={ThemeMode}>
+        Dark Mode
+      </ThemeToggle>
+      <FlexContainer>{children}</FlexContainer>
     </Container>
   );
 };

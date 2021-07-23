@@ -2,6 +2,19 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
+function Tab() {
+  return (
+    <Container>
+      <LinkButton exact to="/">
+        Main
+      </LinkButton>
+      <LinkButton to="/sub">Sub</LinkButton>
+    </Container>
+  );
+}
+
+export default Tab;
+
 const Container = styled.div`
   display: flex;
   flex-direction: row;
@@ -26,16 +39,3 @@ const LinkButton = styled(NavLink)`
     color: #000000;
   }
 `;
-
-function Tab() {
-  return (
-    <Container>
-      <LinkButton exact to="/">
-        Main
-      </LinkButton>
-      <LinkButton to="/sub">Sub</LinkButton>
-    </Container>
-  );
-}
-
-export default Tab;
